@@ -1,0 +1,107 @@
+/* --- style.css --- */
+
+/* Mengambil font 'Poppins' dari Google Fonts agar lebih estetik */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: #2d3436;
+    text-align: center; 
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #2b2d42;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- Styling Khusus Tabel Menu (POSISI TETAP SAMA) --- */
+table {
+    margin: 0 auto 40px auto; /* Membuat tabel tetap di tengah */
+    border-collapse: collapse; /* Menyatukan garis batas tabel agar mulus */
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 12px; /* Membuat sudut tabel melengkung */
+    overflow: hidden; /* Mencegah warna keluar dari lengkungan */
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3); /* Efek bayangan */
+    border: none; /* Menghilangkan border kaku bawaan HTML */
+}
+
+td {
+    padding: 15px 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3); /* Garis pemisah transparan antar menu */
+    transition: background 0.3s ease;
+}
+
+/* Menghilangkan garis pemisah di menu paling kanan */
+td:last-child {
+    border-right: none;
+}
+
+/* Efek saat sel tabel disentuh kursor */
+td:hover {
+    background: rgba(255, 255, 255, 0.2); 
+}
+
+table a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    display: block; /* Membuat seluruh area kotak bisa diklik, bukan cuma teksnya */
+    transition: transform 0.3s ease;
+}
+
+/* Teks sedikit membesar saat disentuh */
+table a:hover {
+    transform: scale(1.05);
+}
+
+
+img:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    color: #4a4e69;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    position: absolute;
+    bottom: -8px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+/* --- Tampilan Teks Biodata --- */
+p {
+    max-width: 600px; 
+    margin: 0 auto 15px auto; 
+    line-height: 1.8;
+    font-size: 16px;
+    color: #555555;
+    background: rgba(255, 255, 255, 0.6); 
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
