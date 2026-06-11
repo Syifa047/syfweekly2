@@ -12,19 +12,19 @@
     <table border="1" align="center" cellspacing="0" cellpadding="10px">
         <tr>
             <td>
-                <a href="index.html" = >Home</a>
+                <a href="index.php" = >Home</a>
             </td>
             <td>
-                <a href="profile.html" = >profile</a>
+                <a href="profile.php" = >profile</a>
             </td>
             <td> 
-                <a href="kontak.html" = >Contact</a>
+                <a href="kontak.php" = >Contact</a>
             </td>
             <td>
-                <a href="mahasiswa.html">Data mahasiswa</a>
+                <a href="mahasiswa.php">Data mahasiswa</a>
             </td>
             <td>
-                <a href="tambah data.html">From mahasiswa</a>
+                <a href="tambah data.php">From mahasiswa</a>
             </td>
         </tr>
     </table>
