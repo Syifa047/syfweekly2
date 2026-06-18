@@ -1,3 +1,21 @@
+<?php
+
+    $koneksi = mysqli_connect("localhost", "root", "", 
+    "syfweeklyb-ti");
+
+    $query = "SELECT * FROM mahasiswa";
+
+    $result = mysqli_query($koneksi, $query); //// object
+
+    /// ambil data (fetch) dari mahasiswa
+    /// mysqli_fetch_row array numeric index angka untuk mengecek
+    /// mysqli_fetch_assoc array asosiative yg berupa nama
+    /// mysqli_fetch_array array numeric/asosiative tapi dobel data 
+    /// mysqli_fetch_object 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +51,8 @@
     <br>
     <a href="tambahdata.php"><button>Tambah data</button></a>
     <br><br>
-    <table border="1" cellpading="5px">
-        <tr>
+    <table border="1" cellpading="5px"> 
+    <tr>
             <th> NO</th>
             <th> Nama</th>
             <th> NIM</th>
@@ -44,22 +62,26 @@
             <th> Foto </th>
             <th> Aksi</th>
         </tr>
+    <?php
+     while ($mhs = mysqli_fetch_assoc($result))
+        {
+    ?>  
         <tr>
             <td>1</td>
-            <td>Syifa maulida</td>
-            <td>1324250047</td>
-            <td>Teknologi informasi digital</td>
-            <td>syfmld21@gmail.com </td>
-            <td>085559475077</td>
+            <td><?php echo $mhs ["nama"]?></td>
+            <td><?php echo $mhs["nim"]?></td>
+            <td><?php echo $mhs ["prodi"]?></td>
+            <td><?php echo $mhs ["email"]?></td>
+            <td><?php echo $mhs ["no_hp"]?></td>
             <td><img src="aset/image/hirono5.png" width="50px"/></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
                 <a href="deletdata.php"><button>Hapus</button></a>
-            </td>
-            
-
-          
+            </td> 
         </tr>
+    <?php
+        }
+    ?>
     </table>
     <br> <br>
     <table border="1" cellpading="5px">
