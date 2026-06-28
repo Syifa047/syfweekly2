@@ -63,6 +63,7 @@
             <th> Aksi</th>
         </tr>
     <?php
+     $no = 1;
      while ($mhs = mysqli_fetch_assoc($result))
         {
     ?>  
