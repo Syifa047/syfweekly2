@@ -1,20 +1,11 @@
 <?php
 
-    $koneksi = mysqli_connect("localhost", "root", "", 
-    "syfweeklyb-ti");
+    require 'fungsi.php';
 
     $query = "SELECT * FROM mahasiswa";
-
-    $result = mysqli_query($koneksi, $query); //// object
-
-    /// ambil data (fetch) dari mahasiswa
-    /// mysqli_fetch_row array numeric index angka untuk mengecek
-    /// mysqli_fetch_assoc array asosiative yg berupa nama
-    /// mysqli_fetch_array array numeric/asosiative tapi dobel data 
-    /// mysqli_fetch_object 
+    $mahasiswa = tampildata($query);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +33,6 @@
             <td>
                 <a href="mahasiswa.php">Data mahasiswa</a>
             </td>
-            <td>
-                <a href="tambah data.php">From mahasiswa</a>
-            </td>
         </tr>
     </table>
     <h2>Data mahasiswa</h2>
@@ -63,12 +51,12 @@
             <th> Aksi</th>
         </tr>
     <?php
-     $no = 1;
-     while ($mhs = mysqli_fetch_assoc($result))
+        $no = 1;
+        foreach($mahasiswa as $mhs)
         {
     ?>  
-        <tr>
-            <td>1</td>
+    <tr>
+            <td><?= $no?></td>
             <td><?php echo $mhs ["nama"]?></td>
             <td><?php echo $mhs["nim"]?></td>
             <td><?php echo $mhs ["prodi"]?></td>
@@ -77,10 +65,11 @@
             <td><img src="aset/image/hirono5.png" width="50px"/></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
-                <a href="deletdata.php"><button>Hapus</button></a>
+                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('yakin??')"><button>Hapus</button></a>
             </td> 
-        </tr>
+    </tr>
     <?php
+        $no++;
         }
     ?>
     </table>
